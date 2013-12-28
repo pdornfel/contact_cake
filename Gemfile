@@ -38,6 +38,12 @@ group :development, :test do
   gem 'valid_attribute'
   gem 'shoulda-matchers'
   gem 'pry-rails'
+  gem 'devise'
+  gem 'capybara'
+  gem 'launchy'
+  # ^ save_and_open_page
+  gem 'better_errors'
+  gem 'binding_of_caller'
 end
 
 gem 'quiet_assets'

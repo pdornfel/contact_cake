@@ -5,6 +5,7 @@
     <tr>
       <th>Name</th>
       <th>User Id</th>
+      <th>Actions</th>
     </tr>
   </thead>
 
@@ -13,9 +14,10 @@
       <tr>
         <td><%= contact.name %></td>
         <td><%= contact.user_id %></td>
+        <td><%= link_to "Display", contact %></td>
       </tr>
       <% end %>
   </tbody>
 </table>
-
+<br>
 <%= link_to "New Contact", new_contact_path %>

@@ -1,6 +1,8 @@
 ContactCake::Application.routes.draw do
-  devise_for :users
 
+  root to: "contacts#index"
+
+  devise_for :users
   resources :contacts
 
 

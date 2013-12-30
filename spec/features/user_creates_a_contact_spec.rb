@@ -12,11 +12,17 @@ feature "User creates a new contact" do
       fill_in "Name", with: "Paul Dornfeld"
       click_on "Create Contact"
 
-      expect(page).to have_content "Contact was successfully created"
+      expect(page).to have_content "successfully created."
     end
   end
 
   context "with invalid attributes" do
+    it "creates a contact with invalid attributes" do
+      visit 'contacts/new'
+      click_on "Create Contact"
+
+      expect(page).to have_content "Invalid entry"
+    end
   end
 
 

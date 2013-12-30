@@ -1,4 +1,5 @@
 class ContactsController < ApplicationController
+  before_action :set_contact, only: [:show, :edit, :update, :destroy]
 
   def index
     @contacts = Contact.all
@@ -10,21 +11,23 @@ class ContactsController < ApplicationController
 
   def create
     @contact = Contact.create(contact_params)
-    redirect_to :contacts, notice: 'Contact was successfully created.'
+    redirect_to :contacts, notice: "Contact \"#{@contact.name}\" was successfully created."
   end
 
   def update
-    @contact = Contact.find(params[:id])
     @contact.update(contact_params)
-    redirect_to :contacts, notice: 'Contact was updated successfully'
+    redirect_to :contacts, notice: "Contact \"#{@contact.name}\" was updated successfully"
   end
 
   def show
-    @contact = Contact.find(params[:id])
   end
 
   def edit
-    @contact = Contact.find(params[:id])
+  end
+
+  def destroy
+    @contact.destroy
+    redirect_to :contacts, notice: "You contact \"#{@contact.name}\" was deleted"
   end
 
   private
@@ -33,4 +36,7 @@ class ContactsController < ApplicationController
     params.require(:contact).permit(:name, :user_id)
   end
 
+  def set_contact
+    @contact = Contact.find(params[:id])
+  end
 end

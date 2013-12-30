@@ -2,4 +2,7 @@
 
 <%= render partial: 'contact_form' %>
 <br>
+<%= link_to "Delete Contact", @contact, method: :delete, data: { confirm: "Are you sure?" } %>
+<br>
+<br>
 <%= link_to "Back", contact_path %>

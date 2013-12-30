@@ -12,7 +12,7 @@ feature "User creates a new contact" do
       fill_in "Name", with: "Paul Dornfeld"
       click_on "Create Contact"
 
-      expect(page).to have_content "successfully created."
+      expect(page).to have_content "Contact \'Paul Dornfeld\' successfully created."
     end
   end
 

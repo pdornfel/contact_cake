@@ -3,7 +3,9 @@ ContactCake::Application.routes.draw do
   root to: "contacts#index"
 
   devise_for :users
-  resources :contacts
+  resources :contacts do
+    resources :facts, only: [:new, :create]
+  end
 
 
   # The priority is based upon order of creation: first created -> highest priority.

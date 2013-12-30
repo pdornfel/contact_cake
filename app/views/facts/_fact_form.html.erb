@@ -1,0 +1,12 @@
+  <%= form_for([@contact, @fact]) do |f| %>
+
+  <div class="field">
+    <%= f.label :fact %><br>
+    <%= f.text_field :fact %>
+  </div><br>
+
+  <div class='actions'>
+  <%= f.submit %>
+  </div>
+
+<% end %>

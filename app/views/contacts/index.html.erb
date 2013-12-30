@@ -17,6 +17,7 @@
         <td><%= contact.name %></td>
         <td><%= contact.user_id %></td>
         <td><%= link_to "Display", contact %></td>
+        <td><%= link_to "Add Fact", new_contact_fact_path(contact) %></td>
       </tr>
       <% end %>
   </tbody>

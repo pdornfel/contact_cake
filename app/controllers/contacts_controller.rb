@@ -10,13 +10,18 @@ class ContactsController < ApplicationController
   end
 
   def create
-    @contact = Contact.create(contact_params)
-    redirect_to :contacts, notice: "Contact \"#{@contact.name}\" was successfully created."
+    @contact = Contact.new(contact_params)
+
+    if @contact.save
+      redirect_to :contacts, notice: "Contact \'#{@contact.name}\' successfully created."
+    else
+      render 'new'
+    end
   end
 
   def update
     @contact.update(contact_params)
-    redirect_to :contacts, notice: "Contact \"#{@contact.name}\" was updated successfully"
+    redirect_to :contacts, notice: "Contact \'#{@contact.name}\'' updated successfully"
   end
 
   def show
@@ -27,7 +32,7 @@ class ContactsController < ApplicationController
 
   def destroy
     @contact.destroy
-    redirect_to :contacts, notice: "You contact \"#{@contact.name}\" was deleted"
+    redirect_to :contacts, notice: "You contact \'#{@contact.name}\'' deleted"
   end
 
   private

@@ -10,7 +10,13 @@ class ContactsController < ApplicationController
 
   def create
     @contact = Contact.create(contact_params)
-    redirect_to :contacts
+    redirect_to :contacts, notice: 'Contact was successfully created.'
+  end
+
+  def update
+    @contact = Contact.find(params[:id])
+    @contact.update(contact_params)
+    redirect_to :contacts, notice: 'Contact was updated successfully'
   end
 
   def show
@@ -26,7 +32,5 @@ class ContactsController < ApplicationController
   def contact_params
     params.require(:contact).permit(:name, :user_id)
   end
-
-
 
 end

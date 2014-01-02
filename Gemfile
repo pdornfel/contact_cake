@@ -46,7 +46,7 @@ end
 
 gem 'quiet_assets'
 gem 'devise'
-gem 'foundation'
+gem 'foundation-rails'
 gem 'simple_form'
 
 # Use ActiveModel has_secure_password

@@ -1,7 +1,6 @@
+# Read about factories at https://github.com/thoughtbot/factory_girl
+
 FactoryGirl.define do
-  factory :contacts do
-
-    name "Paul Dornfeld"
-
+  factory :contact do
   end
 end

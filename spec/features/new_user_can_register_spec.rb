@@ -8,7 +8,6 @@ feature 'a new user can sign up =>' do
 
   scenario "A new user enters in valid and required information" do
     visit new_user_registration_path
-    click_link "Sign Up"
     fill_in "First Name", with: "Paul"
     fill_in "Last Name", with: "Dornfeld"
     fill_in "Email", with: "pdorfel@gmail.com"
@@ -16,8 +15,9 @@ feature 'a new user can sign up =>' do
     fill_in "Password Confirmation", with: "password"
     click_button "Sign Up"
 
-    expect(page).to have_content("Welcome to Contact Cake")
+    expect(page).to have_content("Welcome to Contact Cake! You have signed up successfully.")
     expect(page).to have_content("Sign Out")
+    expect(page).to_not have_content("Sign In")
   end
 
   scenario "a new user DOES NOT supply required information"

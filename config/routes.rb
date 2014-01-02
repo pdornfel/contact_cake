@@ -1,6 +1,10 @@
 ContactCake::Application.routes.draw do
 
+  root to: 'contacts#index'
+
   devise_for :users
+
+  resources :contacts
 
   # resources :contacts do
   #   resources :facts, only: [:new, :create]

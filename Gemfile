@@ -38,7 +38,6 @@ group :development, :test do
   gem 'valid_attribute'
   gem 'shoulda-matchers'
   gem 'pry-rails'
-  gem 'devise'
   gem 'capybara'
   gem 'launchy'
   # ^ save_and_open_page
@@ -47,6 +46,7 @@ group :development, :test do
 end
 
 gem 'quiet_assets'
+gem 'devise'
 
 # Use ActiveModel has_secure_password
 # gem 'bcrypt-ruby', '~> 3.1.2'

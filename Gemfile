@@ -40,13 +40,14 @@ group :development, :test do
   gem 'pry-rails'
   gem 'capybara'
   gem 'launchy'
-  # ^ save_and_open_page
   gem 'better_errors'
   gem 'binding_of_caller'
 end
 
 gem 'quiet_assets'
 gem 'devise'
+gem 'foundation'
+gem 'simple_form'
 
 # Use ActiveModel has_secure_password
 # gem 'bcrypt-ruby', '~> 3.1.2'

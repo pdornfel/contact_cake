@@ -19,6 +19,7 @@ feature 'a new user can sign up =>' do
     expect(page).to have_content("Welcome to Contact Cake! You have signed up successfully.")
     expect(page).to have_content("Sign Out")
     expect(page).to_not have_content("Sign In")
+    expect(Contact.all.count).to eq(0)
   end
 
   scenario "a new user DOES NOT supply required information" do
@@ -55,6 +56,5 @@ feature 'a new user can sign up =>' do
     expect(page).to have_content "Sign in"
     expect(page).to_not have_content "Sign Out"
   end
-
 
 end

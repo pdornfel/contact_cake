@@ -16,4 +16,6 @@ describe User do
       user.password = 'password'
       user.password_confirmation = 'password'
     end
+
+    it { should have_many(:contacts) }
 end

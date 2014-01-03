@@ -2,5 +2,6 @@
 
 FactoryGirl.define do
   factory :contact do
+    name "Paul Dornfeld"
   end
 end

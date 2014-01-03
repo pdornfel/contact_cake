@@ -52,7 +52,7 @@ feature 'a new user can sign up =>' do
     click_link "Sign Out"
 
     expect(page).to have_content "Signed out successfully"
-    expect(page).to have_content "Sign In"
+    expect(page).to have_content "Sign in"
     expect(page).to_not have_content "Sign Out"
   end
 

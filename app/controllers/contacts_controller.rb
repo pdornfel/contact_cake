@@ -3,7 +3,7 @@ class ContactsController < ApplicationController
   before_filter :authenticate_user!
 
   def index
-    @contacts = Contact.all
+    @contacts = current_user.contacts
   end
 
   def new
@@ -12,7 +12,7 @@ class ContactsController < ApplicationController
 
   def create
     @contact = Contact.new(contact_params)
-
+    @contact.user = current_user
     if @contact.save
       redirect_to :contacts, notice: "Contact \'#{@contact.name}\' successfully created."
     else
@@ -39,7 +39,7 @@ class ContactsController < ApplicationController
   private
 
   def contact_params
-    params.require(:contact).permit(:name, :user_id)
+    params.require(:contact).permit(:name)
   end
 
   def set_contact

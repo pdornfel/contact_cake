@@ -7,11 +7,12 @@ class FactsController < ApplicationController
   end
 
   def create
+    @contact = Contact.find(params[:contact_id])
     @fact = Fact.new(fact_params)
-    @fact.contact = params[:contact_id]
+    @fact.contact = @contact
     #@fact.contact = current_user
     if @fact.save
-      redirect_to :contact, notice: "Fact was successfully created"
+      redirect_to contact_path(@contact), notice: "Fact added successfully"
     else
       render 'new'
     end

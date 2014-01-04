@@ -1,8 +1,25 @@
-<h1>Contact</h1>
-
-<div>
-  <%= @contact.name %><br><br>
-  <%= link_to "Edit", edit_contact_path %>
+<h1>Your Contact</h1>
+<div class='top-bar'>
+  <ul>
+    <li><%= link_to "Back to all Contacts", contacts_path %></li>
+    <li><%= link_to "Edit Contact", edit_contact_path %></li>
+  </ul>
 </div>
 <br>
-<%= link_to "Back", contacts_path %>
+<div>
+  <h3><%= @contact.name %></h3>
+</div>
+<br>
+<%= link_to "Add Fact", new_contact_fact_path(@contact) %>
+<br>
+<br>
+<% @contact.facts.each do |fact| %>
+  <%= fact.fact %><br>
+
+<% end %>
+
+
+
+
+
+

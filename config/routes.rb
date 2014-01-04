@@ -4,7 +4,9 @@ ContactCake::Application.routes.draw do
 
   devise_for :users
 
-  resources :contacts
+  resources :contacts do
+    resources :facts
+  end
 
   # resources :contacts do
   #   resources :facts, only: [:new, :create]

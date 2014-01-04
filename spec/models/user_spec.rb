@@ -18,4 +18,6 @@ describe User do
     end
 
     it { should have_many(:contacts) }
+    it { should have_many(:facts).through(:contacts) }
+
 end

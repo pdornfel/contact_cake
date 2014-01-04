@@ -13,10 +13,10 @@
 
   <body>
 
-  <nav>
-    <ul>
+  <nav class='top-bar' data-topbar>
+    <ul class='title-area'>
       <% if user_signed_in? %>
-        <li><%= link_to('Sign Out', destroy_user_session_path, method: :delete) %></li>
+        <li class='name'><%= link_to('Sign Out', destroy_user_session_path, method: :delete) %></li>
       <% end %>
     </ul>
 </nav>
@@ -25,8 +25,10 @@
       <%= content_tag :div, msg, class: name %>
   <% end %>
 
+<div class='center'>
     <%= yield %>
     <%= javascript_include_tag "application" %>
+</div>
 
 
   </body>

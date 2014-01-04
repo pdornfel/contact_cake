@@ -10,9 +10,9 @@ class FactsController < ApplicationController
     @contact = Contact.find(params[:contact_id])
     @fact = Fact.new(fact_params)
     @fact.contact = @contact
-    #@fact.contact = current_user
     if @fact.save
-      redirect_to contact_path(@contact), notice: "Fact added successfully"
+      flash["alert-box success"] = "'#{@fact.fact}' added successfully"
+      redirect_to contact_path(@contact)
     else
       render 'new'
     end

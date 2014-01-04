@@ -52,7 +52,7 @@ feature 'a new user can sign up =>' do
     expect(page).to have_content("Welcome to Contact Cake! You have signed up successfully.")
     click_link "Sign Out"
 
-    expect(page).to have_content "Signed out successfully"
+    expect(page).to have_content "Come back soon!"
     expect(page).to have_content "Sign in"
     expect(page).to_not have_content "Sign Out"
   end

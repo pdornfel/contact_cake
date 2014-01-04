@@ -20,7 +20,7 @@ feature "User creates a new contact", %q{
       click_on "Create Contact"
       fill_in "Name", with: "Paul Dornfeld"
       click_on "Create Contact"
-      expect(page).to have_content "Contact \'Paul Dornfeld\' successfully created."
+      expect(page).to have_content "'Paul Dornfeld' created successfully."
     end
 
   scenario "with invalid attributes" do

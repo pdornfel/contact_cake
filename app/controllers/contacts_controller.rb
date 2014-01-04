@@ -14,7 +14,8 @@ class ContactsController < ApplicationController
     @contact = Contact.new(contact_params)
     @contact.user = current_user
     if @contact.save
-      redirect_to :contacts, notice: "Contact \'#{@contact.name}\' successfully created."
+      flash["alert-box success"] = "'#{@contact.name}' created successfully."
+      redirect_to :contacts
     else
       render 'new'
     end
@@ -22,7 +23,8 @@ class ContactsController < ApplicationController
 
   def update
     @contact.update(contact_params)
-    redirect_to :contacts, notice: "Contact \'#{@contact.name}\'' updated successfully"
+    flash["alert-box success"] = "'#{@contact.name}' updated successfully."
+    redirect_to :contacts
   end
 
   def show
@@ -33,7 +35,8 @@ class ContactsController < ApplicationController
 
   def destroy
     @contact.destroy
-    redirect_to :contacts, notice: "You contact \'#{@contact.name}\'' deleted"
+    flash["alert-box warning"] = "'#{@contact.name}\'' deleted"
+    redirect_to :contacts
   end
 
   private

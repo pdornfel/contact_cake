@@ -24,7 +24,7 @@ feature "A user can add facts to a contact", %Q{
       click_link "Add Fact"
       fill_in "Fact", with: "OMG love this person"
       click_button "Add Fact"
-      expect(page).to have_content "Fact added successfully"
+      expect(page).to have_content "'OMG love this person' added successfully"
       expect(page).to have_content "OMG love this person"
     end
 

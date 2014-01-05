@@ -14,12 +14,17 @@
  *= require_tree .
  */
 
+ div.gation {
+  border: solid black;
+  background-color: #5F5F5F;
+ }
+
 #notice {
   color: green;
 }
 
 div.center {
-  width: 400px;
+  width: 600px;
   display: block;
   margin-left: auto;
   margin-right: auto;

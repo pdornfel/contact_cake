@@ -4,7 +4,9 @@
   <thead>
     <tr>
       <th>Name</th>
-      <th>Actions</th>
+      <th>Fact Count</th>
+      <th>Display</th>
+      <th>Add Fact</th>
     </tr>
   </thead>
 
@@ -12,8 +14,9 @@
     <% @contacts.each do |contact| %>
       <tr>
         <td><%= contact.name %></td>
+        <td><%= contact.facts.count %></td>
         <td><%= link_to "Display", contact %></td>
-        <!-- <td> link_to "Add Fact", new_contact_fact_path(contact)</td> -->
+        <td><%= link_to "Add Fact", new_contact_fact_path(contact) %></td>
       </tr>
       <% end %>
   </tbody>

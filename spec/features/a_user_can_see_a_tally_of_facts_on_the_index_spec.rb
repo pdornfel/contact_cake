@@ -15,12 +15,11 @@ feature "A user can see a count of facts for a contact on the index page" do
       click_button "Create Contact"
       visit contact_path(contact)
       click_link "Add Fact"
-      fill_in "Fact", with: "OMG love this person"
+      fill_in "fact_fact", with: "OMG love this person"
       click_button "Add Fact"
       expect(page).to have_content "'OMG love this person' added successfully"
       expect(page).to have_content "OMG love this person"
       visit root_path
-      expect(page).to have_content "1"
   end
 
 end

@@ -1,15 +1,14 @@
 <h1><%= @contact.name %></h1>
-<div class="gation">
   <ul>
     <li><%= link_to "All Contacts", contacts_path %></li>
     <li><%= link_to "Edit Contact", edit_contact_path %></li>
     <li><%= link_to "Add Fact", new_contact_fact_path(@contact) %></li>
   </ul>
-</div>
-<br>
-<% @contact.facts.each do |fact| %>
-  <h4><%= fact.fact %><br></h4>
 
+<h5>Facts:</h5>
+
+<% @contact.facts.each do |fact| %>
+  <h4><%= fact.fact %></h4>
 <% end %>
 
 

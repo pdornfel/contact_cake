@@ -1,37 +1,65 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-    <title><%= content_for?(:title) ? yield(:title) : "Contact Cake" %></title>
+  <title><%= content_for?(:title) ? yield(:title) : "Contact Cake" %></title>
 
-    <%= stylesheet_link_tag    "application" %>
-    <%= javascript_include_tag "vendor/modernizr" %>
-    <%= csrf_meta_tags %>
-  </head>
+  <%= stylesheet_link_tag    "application" %>
+  <%= javascript_include_tag "vendor/modernizr" %>
+  <%= csrf_meta_tags %>
+</head>
 
-  <body>
+<body>
 
-  <nav class='top-bar' data-topbar>
-    <ul class='title-area'>
-      <% if user_signed_in? %>
-        <li class='name'><%= link_to('Sign Out', destroy_user_session_path, method: :delete) %></li>
-      <% end %>
+  <% if user_signed_in? %>
+  <nav class="top-bar" data-topbar>
+    <ul class="title-area">
+      <li class="name">
+        <h1><%=link_to('Sign Out', destroy_user_session_path, method: :delete) %></h1>
+      </li>
     </ul>
-</nav>
 
-  <% flash.each do |name, msg| -%>
-      <%= content_tag :div, msg, class: name %>
+    <section class="top-bar-section">
+      <!-- Right Nav Section -->
+      <ul class="right">
+        <li class="active"><a><%= "current user: #{current_user.email}" %></a></li>
+<!--       <li class="has-dropdown">
+        <a href="#">Right Button with Dropdown</a>
+        <ul class="dropdown">
+          <li><a href="#">First link in dropdown</a></li>
+        </ul>
+      </li> -->
+    </ul>
+
+    <!-- Left Nav Section -->
+    <ul class="left">
+      <li class="has-form">
+        <div class="row collapse">
+          <div class="large-8 small-12 columns">
+            <input type="text" placeholder="Find Facts">
+          </div>
+          <div class="large-4 small-3 columns">
+            <a href="#" class="alert button expand">Search</a>
+          </div>
+        </div>
+      </li>
+      </ul>
+    </section>
+  </nav>
   <% end %>
 
-<div class='center'>
+  <% flash.each do |name, msg| -%>
+  <%= content_tag :div, msg, class: name %>
+  <% end %>
+
+  <div class='center'>
     <%= yield %>
     <%= javascript_include_tag "application" %>
-</div>
+  </div>
 
-
-  </body>
+</body>
 </html>
 
 

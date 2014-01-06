@@ -14,7 +14,7 @@ class ContactsController < ApplicationController
     @contact = Contact.new(contact_params)
     @contact.user = current_user
     if @contact.save
-      flash["alert-box success"] = "'#{@contact.name}' created successfully."
+      flash["success"] = "'#{@contact.name}' created successfully."
       redirect_to :contacts
     else
       render 'new'
@@ -23,7 +23,7 @@ class ContactsController < ApplicationController
 
   def update
     @contact.update(contact_params)
-    flash["alert-box success"] = "'#{@contact.name}' updated successfully."
+    flash[:warning] = "'#{@contact.name}' updated successfully."
     redirect_to :contacts
   end
 

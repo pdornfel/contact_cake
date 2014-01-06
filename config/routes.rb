@@ -8,6 +8,8 @@ ContactCake::Application.routes.draw do
     resources :facts
   end
 
+  resources :user_inquiries
+
   # resources :contacts do
   #   resources :facts, only: [:new, :create]
   # end

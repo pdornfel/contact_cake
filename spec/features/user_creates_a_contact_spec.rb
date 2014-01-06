@@ -1,4 +1,3 @@
-
 require 'spec_helper'
 
 feature "User creates a new contact", %q{
@@ -13,10 +12,7 @@ feature "User creates a new contact", %q{
 
   scenario "with valid attributes" do
       user = FactoryGirl.create(:user)
-      visit new_contact_path
-      fill_in "Email", with: user.email
-      fill_in "Password", with: user.password
-      click_on "Sign in"
+      sign_in_as(user)
       click_on "Create Contact"
       fill_in "Name", with: "Paul Dornfeld"
       click_on "Create Contact"
@@ -25,10 +21,7 @@ feature "User creates a new contact", %q{
 
   scenario "with invalid attributes" do
       user = FactoryGirl.create(:user)
-      visit new_contact_path
-      fill_in "Email", with: user.email
-      fill_in "Password", with: user.password
-      click_on "Sign in"
+      sign_in_as(user)
       visit new_contact_path
       click_on "Create Contact"
       expect(page).to have_content "can't be blank"

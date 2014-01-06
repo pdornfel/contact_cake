@@ -43,8 +43,6 @@ group :development, :test do
   gem 'pry-rails'
   gem 'capybara'
   gem 'launchy'
-  gem 'better_errors'
-  gem 'binding_of_caller'
 end
 
 gem 'quiet_assets'

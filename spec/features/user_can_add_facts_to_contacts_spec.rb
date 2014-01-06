@@ -13,10 +13,7 @@ feature "A user can add facts to a contact", %Q{
 
   scenario "A user adds a fact to an existing user" do
       contact = FactoryGirl.create(:contact)
-      visit root_path
-      fill_in "Email", with: user.email
-      fill_in "Password", with: user.password
-      click_button "Sign in"
+      sign_in_as(user)
       visit new_contact_path
       fill_in "Name", with: contact.name
       click_button "Create Contact"

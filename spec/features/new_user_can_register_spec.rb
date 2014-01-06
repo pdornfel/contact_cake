@@ -39,7 +39,7 @@ feature 'a new user can sign up =>' do
     expect(page).to have_content("doesn't match Password")
   end
 
-  scenario "When a user signs out after being signed in user is taken to new registartion page" do
+  scenario "When a user signs out after being signed in user is taken to new registration page" do
     user = FactoryGirl.build(:user)
     visit new_user_registration_path
     fill_in "First Name", with: user.first_name

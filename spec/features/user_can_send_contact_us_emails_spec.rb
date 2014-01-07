@@ -22,8 +22,12 @@ feature "A registered user can send Contact Us emails", %q{
     fill_in "Subject", with: "Just saying hello"
     fill_in "Description", with: "Your site is awesome"
     click_on "Submit"
-    save_and_open_page
     expect(page).to have_content "Your message has been sent"
-    save_and_open_page
+  end
+
+  scenario "It actually sends the message" do
+    prev_mail_count = ActionMailer::Base.deliveries.count
+    FactoryGirl.build(:user_inquiry).submit
+    expect(ActionMailer::Base.deliveries.count).to eql(prev_mail_count + 1)
   end
 end

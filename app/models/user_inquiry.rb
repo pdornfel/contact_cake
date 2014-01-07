@@ -8,9 +8,8 @@ class UserInquiry < ActiveRecord::Base
 
 
   def submit
-    if save
-      UserMailer.send_message(self).deliver
-      return true
-    end
+    save
+    UserMailer.send_message(self).deliver
+    return true
   end
 end

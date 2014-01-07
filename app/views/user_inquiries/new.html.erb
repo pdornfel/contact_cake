@@ -1,12 +1,17 @@
-<%= simple_form_for(@user_inquiry) do |f| %>
+<div class='row'>
+  <div class='small-10 large-10'>
 
-  <%= f.input :email %>
-  <%= f.input :first_name, label: "First Name" %>
-  <%= f.input :last_name, label: "Last Name" %>
-  <%= f.input :subject %>
-  <%= f.input :description %>
+    <%= simple_form_for(@user_inquiry) do |f| %>
 
-  <%= f.button :submit, "Submit" %>
+      <%= f.input :email %>
+      <%= f.input :first_name, label: "First Name" %>
+      <%= f.input :last_name, label: "Last Name" %>
+      <%= f.input :subject %>
+      <%= f.input :description %>
+
+      <%= f.button :submit, "Submit" %>
 
 
-<% end %>
+    <% end %>
+  </div>
+</div>

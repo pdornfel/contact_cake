@@ -45,6 +45,10 @@ group :development, :test do
   gem 'launchy'
 end
 
+group :development do
+  gem 'mailcatcher'
+end
+
 gem 'quiet_assets'
 gem 'devise'
 gem 'foundation-rails'

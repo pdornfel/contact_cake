@@ -24,7 +24,7 @@ class ContactsController < ApplicationController
   def update
     @contact.update(contact_params)
     flash[:warning] = "'#{@contact.name}' updated successfully."
-    redirect_to :contacts
+    redirect_to contact_path(@contact)
   end
 
   def show

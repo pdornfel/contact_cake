@@ -35,8 +35,10 @@ end
 
 gem 'rails_12factor', group: :production
 
-# Gem for uploading photos
+# Gems for uploading photos
 gem 'carrierwave'
+gem 'fog'
+gem 'dotenv-rails', :groups => [:development, :test]
 
 group :development, :test do
   gem 'rspec-rails'

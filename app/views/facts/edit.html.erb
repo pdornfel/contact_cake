@@ -1,0 +1,10 @@
+<h1>Edit Fact</h1>
+
+<%= render partial: 'fact_form' %>
+<br>
+<br>
+<%= link_to "Delete Fact", contact_fact_path(@contact,@fact), method: :delete  %>
+<br>
+<!-- link_to "Delete Fact", @fact, method: :delete, data: { confirm: "Are you sure?" }  -->
+<br>
+<%= link_to "Back", contact_path(@contact) %>

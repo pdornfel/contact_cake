@@ -1,4 +1,7 @@
 <%= simple_form_for(@contact) do |f| %>
     <%= f.input :name, autofocus: true %>
+    <br>
+    <%= f.label :contact_photo, "Add Photo" %>
+    <%= f.file_field :contact_photo %>
     <%= f.button :submit %>
 <% end %>

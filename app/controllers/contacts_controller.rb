@@ -15,7 +15,7 @@ class ContactsController < ApplicationController
     @contact.user = current_user
     if @contact.save
       flash["success"] = "'#{@contact.name}' created successfully."
-      redirect_to :contacts
+      redirect_to contact_path(@contact)
     else
       render 'new'
     end
@@ -42,7 +42,7 @@ class ContactsController < ApplicationController
   private
 
   def contact_params
-    params.require(:contact).permit(:name)
+    params.require(:contact).permit(:name, :contact_photo)
   end
 
   def set_contact

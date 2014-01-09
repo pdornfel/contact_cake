@@ -35,6 +35,9 @@ end
 
 gem 'rails_12factor', group: :production
 
+# Gem for uploading photos
+gem 'carrierwave'
+
 group :development, :test do
   gem 'rspec-rails'
   gem 'factory_girl_rails'

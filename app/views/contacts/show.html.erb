@@ -1,5 +1,10 @@
 <h1><%= @contact.name %></h1>
+
+<ul class="clearing-thumbs, large-2" data-clearing>
+  <li><%= image_tag(@contact.contact_photo,size: "180x180")  %></li>
+</ul>
   <ul>
+<br>
     <li><%= link_to "All Contacts", contacts_path %></li>
     <li><%= link_to "Edit Contact", edit_contact_path %></li>
     <li><%= link_to "Add Fact", new_contact_fact_path(@contact) %></li>

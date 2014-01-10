@@ -35,6 +35,8 @@ end
 
 gem 'rails_12factor', group: :production
 
+gem 'backstretch-rails'
+
 # Gems for uploading photos
 gem 'carrierwave'
 gem 'fog'

@@ -31,7 +31,7 @@ class FactsController < ApplicationController
     redirect_to contact_path(@contact)
   end
 
-   def destroy
+  def destroy
     @fact = Fact.find(params[:id])
     @contact = Contact.find(params[:contact_id])
     @fact.destroy

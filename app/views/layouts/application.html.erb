@@ -75,16 +75,26 @@
   <%= content_tag :div, msg, class: "#{name} alert-box" %>
   <% end %>
 
+<div class="row">
   <div class='center'>
-    <%= yield %>
-    <%= javascript_include_tag "application" %>
+    <div class="small-12 medium-12 large-12 columns">
+      <%= yield %>
+      <%= javascript_include_tag "application" %>
+    </div>
   </div>
+</div>
+
+
+<script>
+  // To attach Backstrech as the body's background
+  $(document).ready(function() {
+    $.backstretch( "<%=image_path('background.jpg')%>");
+  });
+</script>
+
 
 </body>
 </html>
-
-
-
 
 
 

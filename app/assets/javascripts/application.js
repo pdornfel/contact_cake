@@ -15,5 +15,9 @@
 //= require foundation
 //= require turbolinks
 //= require_tree .
+//= require 'jquery.backstretch'
+
 
 $(function(){ $(document).foundation(); });
+
+

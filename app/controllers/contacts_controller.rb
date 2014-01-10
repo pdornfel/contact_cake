@@ -3,7 +3,8 @@ class ContactsController < ApplicationController
   before_filter :authenticate_user!
 
   def index
-    @contacts = current_user.contacts
+    @contacts = Contact.look_up(params[:keyword])
+    @all_contacts = current_user.contacts
   end
 
   def new

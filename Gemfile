@@ -42,6 +42,9 @@ gem 'carrierwave'
 gem 'fog'
 gem 'dotenv-rails', :groups => [:development, :test]
 
+# Ransack for search
+gem "ransack"
+
 group :development, :test do
   gem 'rspec-rails'
   gem 'factory_girl_rails'

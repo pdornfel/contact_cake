@@ -5,8 +5,14 @@ class UserInquiriesController < ApplicationController
   end
 
   def create
-    @user_inquiry = UserInquiry.new(user_params)
-
+    if !user_signed_in?
+      @user_inquiry = UserInquiry.new(user_params)
+    else
+      @user_inquiry = UserInquiry.new(user_params)
+      @user_inquiry.first_name = current_user.first_name
+      @user_inquiry.last_name = current_user.last_name
+      @user_inquiry.email = current_user.email
+    end
     if @user_inquiry.submit
       flash['success'] = "Your message has been sent"
       UserMailer.send_message(@user_inquiry)
@@ -15,8 +21,6 @@ class UserInquiriesController < ApplicationController
       else
         redirect_to new_user_session_path
       end
-    else
-      render 'new'
     end
   end
 

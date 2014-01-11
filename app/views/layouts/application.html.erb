@@ -26,9 +26,7 @@
     <!-- Right Nav Section -->
     <ul class="right">
       <li class="has-dropdown">
-        <a href="#">Links</a>
         <ul class="dropdown">
-          <li><%=link_to('Contact Us', new_user_inquiry_path) %></li>
         </ul>
       </li>
     </ul>
@@ -37,6 +35,7 @@
     <ul class="left">
       <li><%= link_to("Sign In", new_user_session_path) %></li>
       <li><%= link_to("Sign Up", new_user_registration_path) %></li>
+      <li><%=link_to('Contact Us', new_user_inquiry_path) %></li>
     </ul>
   </section>
 </nav>
@@ -55,10 +54,7 @@
     <!-- Right Nav Section -->
     <ul class="right">
       <li class="has-dropdown">
-        <a href="#">Account</a>
         <ul class="dropdown">
-          <li><%=link_to('Contact Us', new_user_inquiry_path) %></li>
-          <li><%=link_to('Sign Out', destroy_user_session_path, method: :delete) %></li>
         </ul>
       </li>
     </ul>
@@ -67,6 +63,8 @@
     <ul class="left">
       <li><%= link_to("All Contacts", root_path) %></li>
       <li><%= link_to "New Contact", new_contact_path %></li>
+      <li><%=link_to('Contact Us', new_user_inquiry_path) %></li>
+      <li><%=link_to('Sign Out', destroy_user_session_path, method: :delete) %></li>
     </ul>
   </section>
 </nav>

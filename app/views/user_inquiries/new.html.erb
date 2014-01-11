@@ -2,16 +2,21 @@
   <div class='small-10 large-10'>
 
     <%= simple_form_for(@user_inquiry) do |f| %>
-
-      <%= f.input :email %>
-      <%= f.input :first_name, label: "First Name" %>
-      <%= f.input :last_name, label: "Last Name" %>
-      <%= f.input :subject %>
-      <%= f.input :description %>
-
+      <% if !user_signed_in? %>
+      <br>
+      <br>
+        <%= f.input :email, label: "Your Email" %>
+        <%= f.input :first_name, label: "First Name" %>
+        <%= f.input :last_name, label: "Last Name" %>
+        <%= f.input :subject %>
+        <%= f.input :description %>
+      <% else %>
+      <br>
+      <br>
+        <%= f.input :subject %>
+        <%= f.input :description %>
+      <% end %>
       <%= f.button :submit, "Submit" %>
-
-
     <% end %>
   </div>
 </div>

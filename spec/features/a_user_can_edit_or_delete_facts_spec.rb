@@ -11,6 +11,7 @@ feature "A user can edit or delete facts" do
       click_link "Add Fact"
       fill_in "Fact", with: "the coolest"
       click_button "Create Fact"
+      click_link "Edit Contact or Facts"
       click_link "Edit Fact"
       fill_in "Fact", with: "blah blah"
       click_button "Update Fact"

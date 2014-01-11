@@ -2,7 +2,14 @@
 
 <%= render partial: 'contact_form' %>
 <br>
-<%= link_to "Delete Contact", @contact, method: :delete, data: { confirm: "Are you sure?" } %>
+<h3>Facts:</h3>
+  <div class='panel callout radius'>
+    <% @contact.facts.each do |fact| %>
+      <h4><%= fact.fact %></h4>
+      <br>
+      <%= link_to "Edit Fact", edit_contact_fact_path(@contact.id, fact) %>
+    <% end %>
+  </div>
 <br>
-<br>
-<%= link_to "Back", contact_path %>
+<h4><%= link_to "Delete Contact", @contact, method: :delete, data: { confirm: "Are you sure?" } %><h4>
+<h4><%= link_to "Back", contact_path %><h4>

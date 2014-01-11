@@ -76,15 +76,8 @@
   <%= content_tag :div, msg, class: "#{name} alert-box" %>
   <% end %>
 
-<div class="row">
-  <div class='center'>
-    <div class="">
-      <%= yield %>
-      <%= javascript_include_tag "application" %>
-    </div>
-  </div>
-</div>
-
+  <%= yield %>
+  <%= javascript_include_tag "application" %>
 
 <script>
   // To attach Backstrech as the body's background

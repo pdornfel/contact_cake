@@ -1,9 +1,11 @@
-<h1>Fact</h1>
+<div class='row'>
+  <h1>Fact</h1>
 
-<%= form_for([@contact, @fact]) do |f| %>
+  <%= form_for([@contact, @fact]) do |f| %>
 
-<%= render 'fact_form' %>
+  <%= render 'fact_form' %>
 
-<% end %>
-<br>
-<%= link_to "Back", contacts_path %>
+  <% end %>
+  <br>
+  <%= link_to "Back", contacts_path %>
+</div>

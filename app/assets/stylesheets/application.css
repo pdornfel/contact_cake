@@ -11,6 +11,17 @@
  *= require_self
  *= require foundation_and_overrides
 
+ *= require contact_cake
  *= require_tree .
  */
 
+#map-canvas {
+  height: 500px;
+  width: 500px;
+  margin: 0px;
+  padding: 10px;
+}
+
+.java-fact {
+  display: ;
+}

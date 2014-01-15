@@ -14,10 +14,38 @@
 //= require jquery_ujs
 //= require foundation
 //= require turbolinks
-//= require_tree .
+//= require maps
 //= require 'jquery.backstretch'
+//= require_tree .
+
+$(function(){ $(document).foundation()
+
+  $(function(){
+    $('.java-button').click(function(event) {
+      $('.java-fact').toggle();
+      event.preventDefault();
+    });
+  });
+
+  $('.new_fact_form').on('submit', function(event) {
+    event.preventDefault();
+
+    $form = $(event.currentTarget);
+
+    $.ajax({
+      type: "POST",
+      url: $form.attr('action'),
+      dataType: "json",
+      data: { fact: { fact: "testing" }},
+    });
+  });
 
 
-$(function(){ $(document).foundation(); });
+});
+
+
+
+
+
 
 

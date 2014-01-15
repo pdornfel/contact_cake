@@ -1,44 +1,62 @@
 <div class'row'>
-  <div class='small-12 large-2 inline left'>
+  <div class='small-12 large-3 inline left search-bar'>
     <h1><%= link_to "Contacts", root_path %></h1>
-  <div>
-    <%= form_for('search', method: 'get') do%>
+    <div>
+      <%= form_for('search', method: 'get') do%>
       <%= text_field_tag(:keyword) %>
       <%= submit_tag('Search', class: 'button') %>
-    <% end%>
-    <%= link_to "New Contact", new_contact_path, class: 'button' %>
-  </div>
+      <% end%>
+      <%= link_to "New Contact", new_contact_path, class: 'button' %>
+    </div>
     <div class="panel callout radius">
       <% if @contacts.count == @all_contacts.count %>
-        <h5><%= "Displaying All Contacts: #{@contacts.count} "%></h5>
+      <h5><%= "Displaying All Contacts: #{@contacts.count} "%></h5>
       <% else%>
-        <h5><%= "Search returned #{@contacts.count} contacts "%></h5>
+      <h5><%= "Search returned #{@contacts.count} contacts "%></h5>
       <% end%>
     </div>
-</div>
+  </div>
 
-<div class>
-  <table class='small-12 large-9 inline right'>
-    <thead>
-      <tr>
-        <th>Name</th>
-        <th>Fact Count</th>
-        <th>Met them on</th>
-        <th>Add Fact</th>
-      </tr>
-    </thead>
-    <div>
-      <tbody>
-        <% @contacts.each do |contact|%>
+  <div class>
+    <table class='small-12 large-9 inline right'>
+      <thead>
+        <tr>
+          <th>Name</th>
+          <th>Fact Count</th>
+          <th>Met them on</th>
+          <th>Add Fact</th>
+          <th>Actions</th>
+        </tr>
+      </thead>
+      <div>
+        <tbody>
+          <% @contacts.each do |contact|%>
           <tr>
             <td><%= link_to "#{contact.name}", contact_path(contact) %></td>
             <td><%= contact.facts.count %></td>
             <td><%= contact.created_at.strftime(' %I:%M%P  %B %d,  %Y') %></td>
-            <td><%= link_to "Add Fact", new_contact_fact_path(contact) %></td>
+            <td class=''><a href="#" data-reveal-id="modal_contact_<%= contact.id %>">Add Fact</a></td>
+            <td class='java-button'><%= link_to "Hide hellow world"%></td>
           </tr>
+          <div id="modal_contact_<%= contact.id %>" class="reveal-modal" data-reveal>
+            <h2><%= "#{contact.name}"%></h2>
+            <%= simple_form_for([contact, Fact.new], html: { class: 'new_fact_form' }) do |f| %>
+              <%= f.input :fact, autofocus: true %>
+              <%= f.button :submit %>
+            <% end %>
+            <a class="close-reveal-modal">&#215;</a>
+          </div>
           <% end%>
-      </tbody>
-    </div>
-  </table>
-  <br>
+        </tbody>
+      </div>
+    </table>
+    <br>
+  </div>
+    <div class='java-fact row'>
+    <h3 class='small-8 collumns'>Hello world</h3>
+  </div>
 </div>
+
+
+
+

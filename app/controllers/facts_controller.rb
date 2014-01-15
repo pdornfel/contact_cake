@@ -10,12 +10,17 @@ class FactsController < ApplicationController
     @contact = Contact.find(params[:contact_id])
     @fact = Fact.new(fact_params)
     @fact.contact = @contact
+
+    respond_to do |format|
     if @fact.save
       flash["alert-box success"] = "'#{@fact.fact}' added successfully"
-      redirect_to contact_path(@contact)
+      format.html { redirect_to contacts_path}
+      format.json { render json: @fact }
     else
-      render 'new'
+      format.html { render 'new' }
+      format.json { render json: @fact.errors, status: :unprocessable_fact }
     end
+  end
   end
 
   def edit

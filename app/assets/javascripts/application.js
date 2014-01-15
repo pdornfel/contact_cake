@@ -18,27 +18,31 @@
 //= require 'jquery.backstretch'
 //= require_tree .
 
-$(function(){ $(document).foundation()
+$(function(){
+  $(document).foundation()
 
-  $(function(){
-    $('.java-button').click(function(event) {
-      $('.java-fact').toggle();
-      event.preventDefault();
-    });
-  });
-
-  $('.new_fact_form').on('submit', function(event) {
+  $('.java-button').click(function(event) {
+    $('.java-fact').toggle();
     event.preventDefault();
-
-    $form = $(event.currentTarget);
-
-    $.ajax({
-      type: "POST",
-      url: $form.attr('action'),
-      dataType: "json",
-      data: { fact: { fact: "testing" }},
-    });
   });
+
+  // $('.reveal-modal').on('submit', '.new_fact_form', function(event) {
+  //   // event.preventDefault();
+
+  //   $form = $(event.currentTarget);
+  //   $modal = $form.closest('[data-reveal]');
+
+  //   $.ajax({
+  //     type: "POST",
+  //     url: $form.attr('action'),
+  //     dataType: "json",
+  //     data: $form.serialize(),
+  //     success: function() {
+  //       // $modal.hide();
+  //       // $('.reveal-modal-bg').hide();
+  //     }
+  //   });
+  // });
 
 
 });

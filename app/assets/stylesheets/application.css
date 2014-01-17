@@ -25,3 +25,8 @@
 .java-fact {
   display: ;
 }
+
+.centered {
+  margin-left: auto;
+  margin-right: auto;
+}

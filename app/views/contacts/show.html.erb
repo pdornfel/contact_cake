@@ -1,25 +1,29 @@
-<div>
-  <div class="panel callout radius">
-    <h1><%= link_to "#{@contact.name}", root_path %></h1>
-  </div>
+
+<div class='row large'>
+
+  <div class='small-6 left columns'>
+    <div class="panel callout radius">
+      <h1><%= link_to "#{@contact.name}", root_path %></h1>
+    </div>
 
     <ul>
       <%= image_tag(@contact.contact_photo,size: "250x250")  %>
     </ul>
-    <div class='panel callout radius'>
-      <h5><%= link_to "Add Fact", new_contact_fact_path(@contact) %></h5>
+      <div class='panel callout radius'>
+        <h5><%= link_to "Add Fact", new_contact_fact_path(@contact) %></h5>
+        <h5><%= link_to "Edit Contact or Facts", edit_contact_path %></h5>
+      </div>
     </div>
 
-    <div class='panel callout radius'>
-      <h5>Facts:</h5>
-      <% @contact.facts.each do |fact| %>
-        <h4><%= fact.fact %></h4>
-      <% end %>
+    <div class='small-6 right'>
+      <div class='panel callout radius'>
+        <h5>
+          Facts:
+        </h5>
+        <% @contact.facts.each do |fact| %>
+          <h4><%= fact.fact %></h4>
+        <% end %>
     </div>
-      <h5><%= link_to "Edit Contact or Facts", edit_contact_path %></h5>
-  </div>
-<div class='row'>
-  <div id="map-canvas" class='small-3 collumns small-centered collumns'/>
 </div>
 
 

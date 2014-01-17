@@ -14,7 +14,7 @@ class FactsController < ApplicationController
     respond_to do |format|
     if @fact.save
       flash["alert-box success"] = "'#{@fact.fact}' added successfully"
-      format.html { redirect_to contacts_path}
+      format.html { redirect_to contact_path(@contact)}
       format.json { render json: @fact }
     else
       format.html { render 'new' }

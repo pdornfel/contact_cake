@@ -13,7 +13,7 @@
 //= require jquery
 //= require jquery_ujs
 //= require foundation
-//= require turbolinks
+
 //= require maps
 //= require 'jquery.backstretch'
 //= require_tree .

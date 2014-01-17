@@ -1,4 +1,4 @@
-<div class'row'>
+<div class'row small-10'>
   <div class='small-12 large-3 inline left search-bar'>
     <h1><%= link_to "Contacts", root_path %></h1>
     <div>
@@ -18,14 +18,14 @@
   </div>
 
   <div class>
-    <table class='small-12 large-9 inline right'>
+    <table class='small-12 large-9 centered'>
       <thead>
         <tr>
           <th>Name</th>
           <th>Fact Count</th>
           <th>Met them on</th>
           <th>Add Fact</th>
-          <th>Actions</th>
+<!--           <th>Actions</th> -->
         </tr>
       </thead>
       <div>
@@ -36,7 +36,7 @@
             <td><%= contact.facts.count %></td>
             <td><%= contact.created_at.strftime(' %I:%M%P  %B %d,  %Y') %></td>
             <td class=''><a href="#" data-reveal-id="modal_contact_<%= contact.id %>">Add Fact</a></td>
-            <td class='java-button'><%= link_to "Hide hello world"%></td>
+<!--             <td class='java-button'><%= link_to "Hide hello world"%></td> -->
           </tr>
           <div id="modal_contact_<%= contact.id %>" class="reveal-modal" data-reveal>
             <h2><%= "#{contact.name}"%></h2>
@@ -51,11 +51,11 @@
       </div>
     </table>
     <br>
-  </div>
+<!--   </div>
     <div class='java-fact row'>
     <h3 class='small-8 collumns'>Hello world</h3>
   </div>
-</div>
+</div> -->
 
 
 

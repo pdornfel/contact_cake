@@ -1,3 +1,5 @@
+require 'sidekiq/web'
+
 ContactCake::Application.routes.draw do
 
   root to: 'contacts#index'
@@ -9,6 +11,8 @@ ContactCake::Application.routes.draw do
   end
 
   resources :user_inquiries
+
+  mount Sidekiq::Web, at: "/sidekiq"
 
   # resources :contacts do
   #   resources :facts, only: [:new, :create]

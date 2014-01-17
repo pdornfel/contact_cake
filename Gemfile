@@ -45,6 +45,11 @@ gem 'dotenv-rails', :groups => [:development, :test]
 # Ransack for search
 gem "ransack"
 
+# Sidekiq for background processing
+gem 'sidekiq'
+gem 'sinatra', require: false
+gem 'slim'
+
 group :development, :test do
   gem 'rspec-rails'
   gem 'factory_girl_rails'

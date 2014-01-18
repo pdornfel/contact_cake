@@ -12,7 +12,9 @@ ContactCake::Application.routes.draw do
 
   resources :user_inquiries
 
+if false
   mount Sidekiq::Web, at: "/sidekiq"
+end
 
   # resources :contacts do
   #   resources :facts, only: [:new, :create]

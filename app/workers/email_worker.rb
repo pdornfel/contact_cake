@@ -3,8 +3,8 @@ class EmailWorker
 
   def perform(contact_id)
     contact = Contact.find_by(id: contact_id)
-    puts "hello contact with id of: #{contact.name}"
-    FollowUpMailer.send_follow_up(contact).deliver
+    puts "hello contact: #{contact.name}"
+    FollowUpMailer.delay_for(7.days).send_follow_up(contact)
   end
 
 end

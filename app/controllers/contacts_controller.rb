@@ -15,8 +15,7 @@ class ContactsController < ApplicationController
     @contact = Contact.new(contact_params)
     @contact.user = current_user
     if @contact.save
-      FollowUpMailer.delay.send_follow_up(@contact)
-      # EmailWorker.perform_async(@contact.id)
+      EmailWorker.perform_async(@contact.id)
       flash["success"] = "'#{@contact.name}' created successfully."
       redirect_to contact_path(@contact)
     else

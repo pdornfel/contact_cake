@@ -30,3 +30,8 @@
   margin-left: auto;
   margin-right: auto;
 }
+
+.search-links {
+  margin-left: 20px;
+  display: inline-block;
+}

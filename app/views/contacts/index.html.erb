@@ -1,11 +1,11 @@
 <div class'row small-10'>
   <div class='small-12 large-3 inline left search-bar'>
     <h1><%= link_to "Contacts", root_path %></h1>
-    <div>
-      <%= form_for('search', method: 'get') do%>
+      <%= form_for('search', method: 'get') do %>
       <%= text_field_tag(:keyword) %>
+      <div class='search-links'>
       <%= submit_tag('Search', class: 'button') %>
-      <% end%>
+      <% end %>
       <%= link_to "New Contact", new_contact_path, class: 'button' %>
     </div>
     <div class="panel callout radius">

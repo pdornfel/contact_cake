@@ -1,29 +1,31 @@
 
-<div class='row large'>
-
-  <div class='small-6 left columns'>
+<div class='row'>
+  <div class='centered small-12 large-8 columns'>
     <div class="panel callout radius">
       <h1><%= link_to "#{@contact.name}", root_path %></h1>
     </div>
+  </div>
 
-    <ul>
-      <%= image_tag(@contact.contact_photo,size: "250x250")  %>
-    </ul>
-      <div class='panel callout radius'>
-        <h5><%= link_to "Add Fact", new_contact_fact_path(@contact) %></h5>
-        <h5><%= link_to "Edit Contact or Facts", edit_contact_path %></h5>
+  <div class='centered small-12 large-4 columns'>
+    <%= image_tag(@contact.contact_photo,size: "250x250")  %>
+  </div>
+  <br>
+  <div class='small-12 centered large-8 columns'>
+    <div class='panel callout radius'>
+      <h5><%= link_to "Add Fact", new_contact_fact_path(@contact) %></h5>
+    </div>
+  </div>
+</div>
+
+  <div class='row inline'>
+      <div class='small-12 centered large-8 inline columns'>
+        <div class='panel callout radius'>
+          <% @contact.facts.each do |fact| %>
+            <h5><%= fact.fact %></h5>
+          <% end %>
       </div>
-    </div>
-
-    <div class='small-6 right'>
-      <div class='panel callout radius'>
-        <h5>
-          Facts:
-        </h5>
-        <% @contact.facts.each do |fact| %>
-          <h4><%= fact.fact %></h4>
-        <% end %>
-    </div>
+      <h5><%= link_to "Edit Contact or Facts", edit_contact_path %></h5>
+  </div>
 </div>
 
 

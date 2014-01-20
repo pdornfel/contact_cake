@@ -58,6 +58,7 @@ group :development, :test do
   gem 'pry-rails'
   gem 'capybara'
   gem 'launchy'
+  gem 'rspec-sidekiq'
 end
 
 group :development do

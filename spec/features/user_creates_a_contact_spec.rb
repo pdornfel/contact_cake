@@ -17,6 +17,7 @@ feature "User creates a new contact", %q{
       fill_in "Name", with: "Paul Dornfeld"
       click_on "Create Contact"
       expect(page).to have_content "'Paul Dornfeld' created successfully."
+      expect(EmailWorker).to have(1).jobs
     end
 
   scenario "with invalid attributes" do

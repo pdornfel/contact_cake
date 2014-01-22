@@ -4,10 +4,19 @@
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
+<meta name="viewport" content="initial-scale=1.0, user-scalable=no" />
+    <style type="text/css">
+      html { height: 100% }
+      body { height: 100%; margin: 0; padding: 0 }
+      #map-canvas { height: 100% }
+    </style>
+    <script type="text/javascript"
+      src="https://maps.googleapis.com/maps/api/js?key=AIzaSyC6AtKm21_A07kO73HSNsd7aYgCoisqRF0&sensor=true">
+    </script>
+
   <title><%= content_for?(:title) ? yield(:title) : "Contact Cake" %></title>
 
   <%= stylesheet_link_tag    "application" %>
-  <%= javascript_include_tag "vendor/modernizr" %>
   <%= csrf_meta_tags %>
 </head>
 

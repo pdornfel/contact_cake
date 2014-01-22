@@ -13,43 +13,11 @@
 //= require jquery
 //= require jquery_ujs
 //= require foundation
-
-//= require maps
 //= require 'jquery.backstretch'
 //= require_tree .
 
 $(function(){
-  $(document).foundation()
-
-  $('.java-button').click(function(event) {
-    $('.java-fact').toggle();
-    event.preventDefault();
-  });
-
-  // $('.reveal-modal').on('submit', '.new_fact_form', function(event) {
-  //   // event.preventDefault();
-
-  //   $form = $(event.currentTarget);
-  //   $modal = $form.closest('[data-reveal]');
-
-  //   $.ajax({
-  //     type: "POST",
-  //     url: $form.attr('action'),
-  //     dataType: "json",
-  //     data: $form.serialize(),
-  //     success: function() {
-  //       // $modal.hide();
-  //       // $('.reveal-modal-bg').hide();
-  //     }
-  //   });
-  // });
-
-
+  $(document).foundation();
 });
-
-
-
-
-
 
 

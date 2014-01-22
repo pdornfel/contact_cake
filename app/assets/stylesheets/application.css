@@ -15,7 +15,14 @@
  *= require_tree .
  */
 
-#map-canvas {
+#map-show-contact {
+  height: 500px;
+  width: 500px;
+  margin: 0px;
+  padding: 10px;
+}
+
+#map-new-contact {
   height: 500px;
   width: 500px;
   margin: 0px;

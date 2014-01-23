@@ -9,6 +9,6 @@
     <br>
     <div class'large-4 columns' id="map-new-contact"></div>
     <br>
-    <%= f.input :latitude, readonly: true %>
-    <%= f.input :longitude, readonly: true %>
+    <%= f.hidden_field :latitude, readonly: true %>
+    <%= f.hidden_field :longitude, readonly: true %>
 <% end %>

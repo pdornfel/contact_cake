@@ -12,7 +12,7 @@
     <div class='panel callout radius'>
       <% @contact.facts.each do |fact| %>
         <h4><%= fact.fact %></h4>
-        <%= link_to "Edit Fact", edit_contact_fact_path(@contact.id, fact) %>
+        <%= link_to "Delete Fact", contact_fact_path(@contact, fact), method: :delete %>
         <br>
         <br>
       <% end %>

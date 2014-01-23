@@ -7,8 +7,7 @@
     <br>
     <%= f.button :submit %>
     <br>
-    <div class'large-4 columns' id="map-new-contact"></div>
-    <br>
+    <%= link_to "Back", contacts_path %>
     <%= f.hidden_field :latitude, readonly: true %>
     <%= f.hidden_field :longitude, readonly: true %>
 <% end %>

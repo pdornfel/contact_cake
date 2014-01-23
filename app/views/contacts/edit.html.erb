@@ -1,16 +1,23 @@
-<h1>Edit Contact</h1>
 
-<%= render partial: 'contact_form' %>
-<br>
-<h4><%= link_to "Delete Contact", @contact, method: :delete, data: { confirm: "Are you sure?" } %><h4>
-<h4><%= link_to "Back", contact_path %><h4>
-<h3>Facts:</h3>
-  <div class='panel callout radius'>
-    <% @contact.facts.each do |fact| %>
-      <h4><%= fact.fact %></h4>
-      <%= link_to "Edit Fact", edit_contact_fact_path(@contact.id, fact) %>
-      <br>
-      <br>
-    <% end %>
-  </div>
-<br>
+<div class='row'>
+
+
+  <h1>Edit Contact</h1>
+
+  <%= render partial: 'contact_form' %>
+  <br>
+  <h4><%= link_to "Delete Contact", @contact, method: :delete, data: { confirm: "Are you sure?" } %></h4>
+  <h4><%= link_to "Back", contact_path %></h4>
+  <h3>Facts:</h3>
+    <div class='panel callout radius'>
+      <% @contact.facts.each do |fact| %>
+        <h4><%= fact.fact %></h4>
+        <%= link_to "Edit Fact", edit_contact_fact_path(@contact.id, fact) %>
+        <br>
+        <br>
+      <% end %>
+    </div>
+  <br>
+
+
+</div>

@@ -1,17 +1,25 @@
-Hello,
+<!DOCTYPE html>
+<html>
+  <head></head>
+  <body>
 
-You met '<%= @contact.name.capitalize %>' exactly 3 days ago.
+      Hello,
 
-Maybe it would be a good idea to follow up with them or send them a message?
+      You met '<%= @contact.name.capitalize %>' exactly 3 days ago.
 
-<h1><%= @contact.name.capitalize %></h1>
+      Maybe it would be a good idea to follow up with them or send them a message?
 
-<% @contact.facts.each do |fact| %>
-  <h4><%= fact.fact %></h4>
-<% end %>
+      <h1><%= @contact.name.capitalize %></h1>
 
-<div>
-  <p>Happy Contact Caking.</p>
-  <p>From,</p>
-  <p>The Contact Cake Admin Team</p>
-</div>
+      <% @contact.facts.each do |fact| %>
+        <h4><%= fact.fact %></h4>
+      <% end %>
+
+      <div>
+        <p>Happy Contact Caking.</p>
+        <p>From,</p>
+        <p>The Contact Cake Admin Team</p>
+      </div>
+
+  </body>
+</html>
